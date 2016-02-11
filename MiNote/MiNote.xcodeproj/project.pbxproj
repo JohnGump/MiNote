@@ -17,6 +17,14 @@
 		2E00833A1C6479CA00BAA074 /* MiNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083391C6479CA00BAA074 /* MiNoteUITests.m */; };
 		2E5881D31C6B583B00617114 /* SecretModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5881D21C6B583B00617114 /* SecretModel.m */; };
 		2E5881D81C6C5EC400617114 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5881D71C6C5EC400617114 /* NSData+AES.m */; };
+		2E5881DF1C6C94CD00617114 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E5881DA1C6C94CD00617114 /* SMS_SDKLocalizable.strings */; };
+		2E5881E01C6C94CD00617114 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881DC1C6C94CD00617114 /* MOBFoundation.framework */; };
+		2E5881E11C6C94CD00617114 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881DD1C6C94CD00617114 /* SMS_SDK.framework */; };
+		2E5881E31C6C94E700617114 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881E21C6C94E700617114 /* libz.tbd */; };
+		2E5881E51C6C94F100617114 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881E41C6C94F100617114 /* libicucore.tbd */; };
+		2E5881E71C6C94F800617114 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881E61C6C94F800617114 /* MessageUI.framework */; };
+		2E5881E91C6C950200617114 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881E81C6C950200617114 /* JavaScriptCore.framework */; };
+		2E5881EB1C6C950A00617114 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5881EA1C6C950A00617114 /* libstdc++.tbd */; };
 		3E8442B06C5CB4721A583086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31869F2964F93CC010F274FD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +67,15 @@
 		2E5881D21C6B583B00617114 /* SecretModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretModel.m; sourceTree = "<group>"; };
 		2E5881D61C6C5EC400617114 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		2E5881D71C6C5EC400617114 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		2E5881DB1C6C94CD00617114 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		2E5881DC1C6C94CD00617114 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		2E5881DD1C6C94CD00617114 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		2E5881DE1C6C94CD00617114 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		2E5881E21C6C94E700617114 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2E5881E41C6C94F100617114 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		2E5881E61C6C94F800617114 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2E5881E81C6C950200617114 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2E5881EA1C6C950A00617114 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		31869F2964F93CC010F274FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9FB3D97F4F5B38987AC2E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +85,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5881EB1C6C950A00617114 /* libstdc++.tbd in Frameworks */,
+				2E5881E91C6C950200617114 /* JavaScriptCore.framework in Frameworks */,
+				2E5881E71C6C94F800617114 /* MessageUI.framework in Frameworks */,
+				2E5881E51C6C94F100617114 /* libicucore.tbd in Frameworks */,
+				2E5881E31C6C94E700617114 /* libz.tbd in Frameworks */,
+				2E5881E11C6C94CD00617114 /* SMS_SDK.framework in Frameworks */,
+				2E5881E01C6C94CD00617114 /* MOBFoundation.framework in Frameworks */,
 				3E8442B06C5CB4721A583086 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +190,7 @@
 		2E5881D41C6C5D3900617114 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2E5881D91C6C94CD00617114 /* SMS_SDK */,
 				2E5881D51C6C5D3900617114 /* Catagory */,
 			);
 			path = Other;
@@ -178,6 +203,16 @@
 				2E5881D71C6C5EC400617114 /* NSData+AES.m */,
 			);
 			path = Catagory;
+			sourceTree = "<group>";
+		};
+		2E5881D91C6C94CD00617114 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				2E5881DA1C6C94CD00617114 /* SMS_SDKLocalizable.strings */,
+				2E5881DC1C6C94CD00617114 /* MOBFoundation.framework */,
+				2E5881DD1C6C94CD00617114 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
 		2E7DBC831C6B549100E33585 /* Classes */ = {
@@ -217,6 +252,11 @@
 		35065E29691EEE7878958A21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E5881EA1C6C950A00617114 /* libstdc++.tbd */,
+				2E5881E81C6C950200617114 /* JavaScriptCore.framework */,
+				2E5881E61C6C94F800617114 /* MessageUI.framework */,
+				2E5881E41C6C94F100617114 /* libicucore.tbd */,
+				2E5881E21C6C94E700617114 /* libz.tbd */,
 				31869F2964F93CC010F274FD /* libPods.a */,
 			);
 			name = Frameworks;
@@ -311,6 +351,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 2E0083081C6479CA00BAA074;
 			productRefGroup = 2E0083121C6479CA00BAA074 /* Products */;
@@ -329,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5881DF1C6C94CD00617114 /* SMS_SDKLocalizable.strings in Resources */,
 				2E0083241C6479CA00BAA074 /* LaunchScreen.storyboard in Resources */,
 				2E0083211C6479CA00BAA074 /* Assets.xcassets in Resources */,
 				2E00831F1C6479CA00BAA074 /* Main.storyboard in Resources */,
@@ -460,6 +502,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		2E5881DA1C6C94CD00617114 /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E5881DB1C6C94CD00617114 /* en */,
+				2E5881DE1C6C94CD00617114 /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -551,6 +602,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MiNote/Classes/Other/SMS_SDK",
+				);
 				INFOPLIST_FILE = MiNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JohnGump.MiNote;
@@ -564,6 +619,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MiNote/Classes/Other/SMS_SDK",
+				);
 				INFOPLIST_FILE = MiNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JohnGump.MiNote;
