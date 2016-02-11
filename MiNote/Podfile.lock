@@ -23,6 +23,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BmobSDK (1.6.6)
   - Mantle (2.0.6):
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
@@ -36,12 +37,14 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking-RACExtensions
+  - BmobSDK
   - Mantle
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AFNetworking-RACExtensions: a043c6b492fa892395ceb9d20bc4c94e96e08a57
+  BmobSDK: c896d4ff3986f2b4fc8406fb2b801230f7419878
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
