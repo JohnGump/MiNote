@@ -1,14 +1,15 @@
 //
-//  SecretModel.h
+//  SecretModel.m
 //  MiNote
 //
 //  Created by 苹果电脑开发账号 on 16/2/10.
 //  Copyright © 2016年 JohnGump. All rights reserved.
 //
 
-#import <Mantle/Mantle.h>
+#import "SecretModel.h"
 
-@interface SecretModel : MTLModel
+@implementation SecretModel
+
 
 
 @end

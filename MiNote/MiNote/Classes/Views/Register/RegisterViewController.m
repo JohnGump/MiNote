@@ -48,7 +48,7 @@
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F0F0F0"];
     self.backGroundView.backgroundColor = [UIColor whiteColor];
     self.backGroundView.layer.cornerRadius = 22;
-    UIBarButtonItem *loginBtnItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStyleDone target:self action:@selector(commitVerificationCode)];
+    UIBarButtonItem *loginBtnItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(commitVerificationCode)];
     self.navigationItem.rightBarButtonItem = loginBtnItem;
 }
 
@@ -92,9 +92,6 @@
     [SMSSDK commitVerificationCode:self.verifyTextField.text phoneNumber:self.phoneNumberTextField.text zone:@"86" result:^(NSError *error) {
         NSLog(@"%@",error);
         
-
-        
-        
     }];
 }
 
@@ -128,14 +125,12 @@
             [self saveToken:receive.objectId];
         }
     }];
-    
 }
 
 - (void)saveToken:(NSString *)token {
     NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
     [us setValue:token forKeyPath:TOKEN];
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        
     }];
 }
 

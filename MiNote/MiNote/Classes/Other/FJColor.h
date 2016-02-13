@@ -19,6 +19,7 @@
 
 #define FJCOLOR_BLUE_BTN [UIColor colorWithHexString:@"#26ace9"]
 
+#define FJCOLOR_BACKGROUND [UIColor colorWithHexString:@"#F0F0F0"]
 @interface FJColor : NSObject
 
 @end
