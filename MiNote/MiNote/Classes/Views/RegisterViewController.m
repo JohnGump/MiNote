@@ -8,8 +8,10 @@
 
 #import "RegisterViewController.h"
 #import "FJColor.h"
+#import <BmobSDK/Bmob.h>
 #import "RegisterTableViewCell.h"
 #import "SViewModel.h"
+#import "KEY.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "Core.h"
 
@@ -86,10 +88,11 @@
 }
 
 - (void)commitVerificationCode {
+    [self login];
     [SMSSDK commitVerificationCode:self.verifyTextField.text phoneNumber:self.phoneNumberTextField.text zone:@"86" result:^(NSError *error) {
         NSLog(@"%@",error);
         
-        
+
         
         
     }];
@@ -100,6 +103,39 @@
     _sendButton.enabled = NO;
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneNumberTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
         NSLog(@"发送成功,%@",error);
+    }];
+}
+
+- (void)login {
+    __weak typeof(self) weakSelf = self;
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"MiNote"];
+    //查找GameScore表里面id为0c6db13c的数据
+    [bquery whereKey:@"userName" equalTo:self.phoneNumberTextField.text];
+    [bquery selectKeys:@[@"objectId"]];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count == 0) {
+            BmobObject *gameScore = [BmobObject objectWithClassName:@"MiNote"];
+            [gameScore setObject:self.phoneNumberTextField.text forKey:@"userName"];
+            [gameScore setObject:@[@"111",@"222"] forKey:@"miData"];
+            [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                NSLog(@"%d%@",isSuccessful,error);
+                //进行操作
+                [self login];
+            }];
+        } else {
+            BmobObject *receive = array[0];
+            NSLog(@"%@",receive.objectId);
+            [self saveToken:receive.objectId];
+        }
+    }];
+    
+}
+
+- (void)saveToken:(NSString *)token {
+    NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
+    [us setValue:token forKeyPath:TOKEN];
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        
     }];
 }
 

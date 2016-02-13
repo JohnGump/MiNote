@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "KEY.h"
+#import <BmobSDK/Bmob.h>
 #import "ViewController.h"
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [SMSSDK registerApp:APPKEY_MOB
              withSecret:APPSECRET_MOB];
-    
+    [Bmob registerWithAppKey:APPKEY_BMOB];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[ViewController alloc]init];

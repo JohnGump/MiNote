@@ -13,6 +13,8 @@
 
 #define APPSECRET_MOB @"ce41d93ec809a1f4e2a956a72afe745a"
 
+#define APPKEY_BMOB @"4e949b49a982aea0025e50f1d3107da5"
+
 #define TOKEN @"token"
 
 
