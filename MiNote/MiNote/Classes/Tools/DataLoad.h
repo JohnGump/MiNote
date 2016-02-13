@@ -10,9 +10,9 @@
 #import <BmobSDK/Bmob.h>
 @interface DataLoad : NSObject
 
-+ (void)GETDataWithObjectId:(NSString *)objectid block:(BmobObjectResultBlock)block;
++ (void)GETDatablock:(BmobObjectResultBlock)block;
 
-+ (void)UPdateDataWithObjectId:(NSString *)objectid withData:(NSArray *)dataArray block:(BmobBooleanResultBlock)block;
++ (void)UPdateDatawithData:(NSArray *)dataArray block:(BmobBooleanResultBlock)block;
 
 
 @end

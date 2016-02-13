@@ -24,7 +24,7 @@
 - (void) initSubscrition {
     RACSignal *loadDataSignal = RACObserve(self, modelId);
     [loadDataSignal subscribeNext:^(id x) {
-        [DataLoad GETDataWithObjectId:self.modelId block:^(BmobObject *object, NSError *error) {
+        [DataLoad GETDatablock:^(BmobObject *object, NSError *error) {
             NSLog(@"%@",object);
         }];
     }];

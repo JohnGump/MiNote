@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="bgView" destination="Dsw-Rs-Q1M" id="eNL-fN-eux"/>
                 <outlet property="mainTableView" destination="6IM-E9-Oky" id="JLE-H9-Sq8"/>
+                <outlet property="sendBtn" destination="I4n-0l-51I" id="ceh-Ow-ERP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsw-Rs-Q1M">
                     <rect key="frame" x="20" y="84" width="560" height="168"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-E9-Oky">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-E9-Oky">
                             <rect key="frame" x="10" y="10" width="540" height="148"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -38,11 +39,21 @@
                         <constraint firstAttribute="bottom" secondItem="6IM-E9-Oky" secondAttribute="bottom" constant="10" id="eNx-u2-Tpz"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-0l-51I">
+                    <rect key="frame" x="20" y="272" width="560" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="rTW-m0-B1C"/>
+                    </constraints>
+                    <state key="normal" title="提    交"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Dsw-Rs-Q1M" secondAttribute="trailing" constant="20" id="G4x-g3-C6s"/>
                 <constraint firstItem="Dsw-Rs-Q1M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="HJm-ng-aAH"/>
+                <constraint firstItem="I4n-0l-51I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="KsP-nJ-ogx"/>
+                <constraint firstAttribute="trailing" secondItem="I4n-0l-51I" secondAttribute="trailing" constant="20" id="nM9-WE-v7U"/>
+                <constraint firstItem="I4n-0l-51I" firstAttribute="top" secondItem="Dsw-Rs-Q1M" secondAttribute="bottom" constant="20" id="qQf-Yt-ywZ"/>
                 <constraint firstItem="Dsw-Rs-Q1M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zD2-7U-aQv"/>
             </constraints>
         </view>

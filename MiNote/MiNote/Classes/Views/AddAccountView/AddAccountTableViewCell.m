@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (weak, nonatomic) IBOutlet UITextField *msgfield;
 
 @end
 
@@ -20,7 +19,7 @@
 @implementation AddAccountTableViewCell
 
 - (void)awakeFromNib {
-    RAC(self,titleLabel.text) = RACObserve(self, <#KEYPATH#>)
+    RAC(self,titleLabel.text) = RACObserve(self, model.title);
     // Initialization code
 }
 

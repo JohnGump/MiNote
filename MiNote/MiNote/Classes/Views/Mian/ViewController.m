@@ -37,6 +37,8 @@
 }
 
 - (void)loadUI {
+    self.automaticallyAdjustsScrollViewInsets = false;
+
     self.bgView.layer.cornerRadius = 22;
     [self.view setBackgroundColor:FJCOLOR_BACKGROUND];
     UIBarButtonItem *addbtnItem = [[UIBarButtonItem alloc]initWithTitle:@"添 加" style:UIBarButtonItemStyleDone target:self action:@selector(addAccount)];

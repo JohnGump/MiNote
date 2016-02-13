@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AddAccountModel.h"
 @interface AddAccountTableViewCell : UITableViewCell
+
+@property (nonatomic, strong)AddAccountModel *model;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *msgfield;
 
 @end

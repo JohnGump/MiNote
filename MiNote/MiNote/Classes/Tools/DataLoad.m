@@ -7,17 +7,24 @@
 //
 
 #import "DataLoad.h"
-
+#import "KEY.h"
 @implementation DataLoad
 
-+ (void)GETDataWithObjectId:(NSString *)objectid block:(BmobObjectResultBlock)block {
++ (void)GETDatablock:(BmobObjectResultBlock)block {
+    
+    NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
+    NSString *objectid = [us valueForKeyPath:TOKEN];
+    
+    
     BmobQuery *query = [BmobQuery queryWithClassName:@"MiNote"];
     [query getObjectInBackgroundWithId:objectid block:^(BmobObject *object, NSError *error) {
         block(object,error);
     }];
 }
 
-+ (void)UPdateDataWithObjectId:(NSString *)objectid withData:(NSArray *)dataArray block:(BmobBooleanResultBlock)block{
++ (void)UPdateDatawithData:(NSArray *)dataArray block:(BmobBooleanResultBlock)block{
+    NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
+    NSString *objectid = [us valueForKeyPath:TOKEN];
     BmobObject *object = [BmobObject objectWithoutDatatWithClassName:@"MiNote" objectId:objectid];
     [object setObject:dataArray forKey:@"miData"];
     [object updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
