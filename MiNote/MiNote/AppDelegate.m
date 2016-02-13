@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "KEY.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [SMSSDK registerApp:APPKEY_MOB
              withSecret:APPSECRET_MOB];
-    // Override point for customization after application launch.
+    
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[ViewController alloc]init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

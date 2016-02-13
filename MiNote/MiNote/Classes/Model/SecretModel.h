@@ -10,4 +10,5 @@
 
 @interface SecretModel : MTLModel
 
+
 @end
