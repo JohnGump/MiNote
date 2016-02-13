@@ -10,7 +10,6 @@
 		2E0083161C6479CA00BAA074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083151C6479CA00BAA074 /* main.m */; };
 		2E0083191C6479CA00BAA074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083181C6479CA00BAA074 /* AppDelegate.m */; };
 		2E00831C1C6479CA00BAA074 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00831B1C6479CA00BAA074 /* ViewController.m */; };
-		2E00831F1C6479CA00BAA074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E00831D1C6479CA00BAA074 /* Main.storyboard */; };
 		2E0083211C6479CA00BAA074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0083201C6479CA00BAA074 /* Assets.xcassets */; };
 		2E0083241C6479CA00BAA074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E0083221C6479CA00BAA074 /* LaunchScreen.storyboard */; };
 		2E00832F1C6479CA00BAA074 /* MiNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E00832E1C6479CA00BAA074 /* MiNoteTests.m */; };
