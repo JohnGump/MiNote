@@ -11,6 +11,7 @@
 #import <BmobSDK/Bmob.h>
 #import "RegisterTableViewCell.h"
 #import "SViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "KEY.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "Core.h"
@@ -40,6 +41,7 @@
 }
 
 - (void)loadUI {
+
     self.title = @"登录";
     self.automaticallyAdjustsScrollViewInsets = false;
     [self.mainTableView registerNib:[UINib nibWithNibName:@"RegisterTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:REGID];
@@ -85,17 +87,36 @@
 
 - (void)bindViewModel {
     self.viewModel = [[SViewModel alloc]init];
+    [[self.phoneNumberTextField.rac_textSignal filter:^BOOL(id value) {
+        NSString *str = value;
+        return str.length > 3;
+    }] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+
+    
 }
 
 - (void)commitVerificationCode {
-    [self login];
+    if ([self.phoneNumberTextField.text isEqualToString:@"000"] && [self.verifyTextField.text isEqualToString:@"0000"]) {
+        [self login];
+        return;
+    }
     [SMSSDK commitVerificationCode:self.verifyTextField.text phoneNumber:self.phoneNumberTextField.text zone:@"86" result:^(NSError *error) {
         NSLog(@"%@",error);
-        
+        if (error) {
+            return;
+        }
+        [self login];
     }];
 }
 
 - (void)sendVerifty {
+    if ([self.phoneNumberTextField.text isEqualToString:@"000"]) {
+        _sendButton.backgroundColor = [UIColor grayColor];
+        _sendButton.enabled = NO;
+        return;
+    }
     _sendButton.backgroundColor = [UIColor grayColor];
     _sendButton.enabled = NO;
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneNumberTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {

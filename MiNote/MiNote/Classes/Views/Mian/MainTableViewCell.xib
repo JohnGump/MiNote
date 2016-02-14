@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu8-Sg-zw9" userLabel="passWord">
-                        <rect key="frame" x="261" y="71" width="42" height="20.5"/>
+                        <rect key="frame" x="147" y="71" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="gQT-8S-RP5" secondAttribute="bottom" id="Qep-tc-39z"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gQT-8S-RP5" secondAttribute="trailing" id="XeH-9T-Kgj"/>
                     <constraint firstItem="OhU-rM-JyZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kaa-0A-eDA"/>
-                    <constraint firstItem="Qu8-Sg-zw9" firstAttribute="leading" secondItem="87O-bJ-qG7" secondAttribute="trailing" constant="149" id="kfi-LY-7TD"/>
+                    <constraint firstItem="Qu8-Sg-zw9" firstAttribute="leading" secondItem="87O-bJ-qG7" secondAttribute="trailing" constant="35" id="kfi-LY-7TD"/>
                     <constraint firstItem="OhU-rM-JyZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nMg-Ol-LZM"/>
                     <constraint firstItem="i9u-PF-9g7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-25" id="zmz-US-F16"/>
                 </constraints>

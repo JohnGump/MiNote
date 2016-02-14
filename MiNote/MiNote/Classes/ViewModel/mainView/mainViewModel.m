@@ -27,11 +27,6 @@
 - (NSMutableArray *)secrets {
     if (!_secrets) {
         _secrets = [NSMutableArray array];
-        SecretModel *aModel = [[SecretModel alloc]init];
-        aModel.title = @"微信";
-        aModel.userName = @"love";
-        aModel.passWord = @"lalalla";
-        [_secrets addObject:aModel];
     }
     return _secrets;
 }

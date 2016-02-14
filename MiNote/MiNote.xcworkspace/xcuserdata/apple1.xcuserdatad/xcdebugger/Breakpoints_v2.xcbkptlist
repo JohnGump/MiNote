@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MiNote/Classes/ViewModel/mainView/mainViewModel.m"
-            timestampString = "477133691.387813"
+            timestampString = "477137851.466975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-initSubscrition"
             landmarkType = "5">
          </BreakpointContent>
