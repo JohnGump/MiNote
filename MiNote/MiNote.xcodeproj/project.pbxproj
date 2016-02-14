@@ -746,7 +746,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "24feccd4-999a-4f48-8d03-403e3e8d1f0f";
+				PROVISIONING_PROFILE = "38f469d8-89ff-4c28-a29f-605e4f76e094";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -785,7 +785,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "24feccd4-999a-4f48-8d03-403e3e8d1f0f";
+				PROVISIONING_PROFILE = "38f469d8-89ff-4c28-a29f-605e4f76e094";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -806,6 +806,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = win.FreeJ.MiNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "38f469d8-89ff-4c28-a29f-605e4f76e094";
 			};
 			name = Debug;
 		};
@@ -823,6 +824,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = win.FreeJ.MiNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "38f469d8-89ff-4c28-a29f-605e4f76e094";
 			};
 			name = Release;
 		};
