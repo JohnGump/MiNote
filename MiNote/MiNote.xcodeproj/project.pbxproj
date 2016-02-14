@@ -806,7 +806,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = win.FreeJ.MiNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38f469d8-89ff-4c28-a29f-605e4f76e094";
+				PROVISIONING_PROFILE = "24feccd4-999a-4f48-8d03-403e3e8d1f0f";
 			};
 			name = Debug;
 		};
@@ -824,7 +824,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = win.FreeJ.MiNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "38f469d8-89ff-4c28-a29f-605e4f76e094";
+				PROVISIONING_PROFILE = "24feccd4-999a-4f48-8d03-403e3e8d1f0f";
 			};
 			name = Release;
 		};
