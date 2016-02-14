@@ -8,7 +8,7 @@
 
 #import <Mantle/Mantle.h>
 #import <UIKit/UIKit.h>
-@interface SecretModel : MTLModel
+@interface SecretModel : NSObject
 
 @property (nonatomic, strong)UIImage *iconImage;
 

@@ -8,10 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "SecretModel.h"
+
+@protocol UpdateDelegate <NSObject>
+
+- (void)update;
+
+@end
+
 @interface mainViewModel : NSObject
+
+//@property (nonatomic, assign) UpdateDelegate delegate;
 
 @property (nonatomic, strong) NSString *modelId;
 
 @property (nonatomic, strong) NSMutableArray *secrets;
+
+- (void)reloadData;
 
 @end

@@ -113,7 +113,6 @@
         if (array.count == 0) {
             BmobObject *gameScore = [BmobObject objectWithClassName:@"MiNote"];
             [gameScore setObject:self.phoneNumberTextField.text forKey:@"userName"];
-            [gameScore setObject:@[@"111",@"222"] forKey:@"miData"];
             [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
                 NSLog(@"%d%@",isSuccessful,error);
                 //进行操作

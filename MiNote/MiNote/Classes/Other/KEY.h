@@ -15,6 +15,8 @@
 
 #define APPKEY_BMOB @"4e949b49a982aea0025e50f1d3107da5"
 
+#define SECRETDATA @"secretData"
+
 #define TOKEN @"token"
 
 

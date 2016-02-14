@@ -10,6 +10,7 @@
 #import "AddAccountTableViewCell.h"
 #import "AddAccountViewModel.h"
 #import "DataLoad.h"
+#import "KEY.h"
 #import "FJColor.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #define cell_id @"AddAccountTableViewCell_id"
@@ -85,11 +86,13 @@
 
 - (void)submit {
     
-    NSMutableArray *array = [NSMutableArray array];
+    NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *array =[NSMutableArray arrayWithArray:[us valueForKeyPath:SECRETDATA]];
+
     self.model.title = self.titleField.text;
     self.model.userName = self.userNameField.text;
     self.model.passWord = self.passWordField.text;
-//    [array addObject:self.model];
+    
     NSDictionary *dic = @{@"title":self.model.title,@"userName":self.model.userName,@"passWord":self.model.passWord};
     [array addObject:dic];
     

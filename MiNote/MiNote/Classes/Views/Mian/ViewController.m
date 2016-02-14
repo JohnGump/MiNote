@@ -29,22 +29,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUI];
+    [self bindViewModel];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.viewModel reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
         [self showView];
+    [self.mainTableView reloadData];
 
 }
 
 - (void)loadUI {
     self.automaticallyAdjustsScrollViewInsets = false;
-
+    [self.mainTableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MAINCELLID];
     self.bgView.layer.cornerRadius = 22;
     [self.view setBackgroundColor:FJCOLOR_BACKGROUND];
     UIBarButtonItem *addbtnItem = [[UIBarButtonItem alloc]initWithTitle:@"添 加" style:UIBarButtonItemStyleDone target:self action:@selector(addAccount)];
     self.navigationItem.rightBarButtonItem = addbtnItem;
+    UIBarButtonItem *relBtnItem = [[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(reload)];
+    self.navigationItem.leftBarButtonItem = relBtnItem;
 }
 
+- (void)reload {
+    [self.mainTableView reloadData];
+}
 
 - (void)showView {
     NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
@@ -60,7 +71,12 @@
 - (void)bindViewModel {
     self.viewModel = [[mainViewModel alloc]init];
     RAC(self.viewModel,modelId) = RACObserve(self, objectId);
+//    RACSignal *signal = RACObserve(self, viewModel.secrets);
+//    [signal subscribeNext:^(id x) {
+//        [self.mainTableView reloadData];
+//    }];
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.secrets.count;

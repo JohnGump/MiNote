@@ -7,10 +7,24 @@
 //
 
 #import "MainTableViewCell.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+@interface MainTableViewCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *passWordField;
+
+
+@end
 
 @implementation MainTableViewCell
 
 - (void)awakeFromNib {
+    self.iconImageView.image = self.model.iconImage;
+    RAC(self,titleLabel.text) = RACObserve(self, model.title);
+    RAC(self,userName.text) = RACObserve(self, model.userName);
+    RAC(self,passWordField.text) = RACObserve(self, model.passWord);
     // Initialization code
 }
 

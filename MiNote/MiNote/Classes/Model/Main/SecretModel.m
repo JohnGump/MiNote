@@ -10,6 +10,13 @@
 
 @implementation SecretModel
 
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.iconImage = [UIImage imageNamed:@"icon"];
+    }
+    return self;
+}
 
 @end
