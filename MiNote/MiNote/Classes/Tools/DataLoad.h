@@ -10,8 +10,19 @@
 #import <BmobSDK/Bmob.h>
 @interface DataLoad : NSObject
 
+/**
+ *  Bmob获取数据
+ *
+ *  @param block 回调block
+ */
 + (void)GETDatablock:(BmobObjectResultBlock)block;
 
+/**
+ *  同步上传数据
+ *
+ *  @param dataArray 要上传的数据
+ *  @param block     回调Block
+ */
 + (void)UPdateDatawithData:(NSArray *)dataArray block:(BmobBooleanResultBlock)block;
 
 

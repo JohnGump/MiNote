@@ -10,6 +10,9 @@
 #import <UIKit/UIKit.h>
 @interface RegisterModel : NSObject
 
+/**
+ *  账号图标
+ */
 @property (nonatomic, strong) UIImage *iconImage;
 
 @end

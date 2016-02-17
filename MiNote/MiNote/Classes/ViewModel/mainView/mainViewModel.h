@@ -19,8 +19,14 @@
 
 //@property (nonatomic, assign) UpdateDelegate delegate;
 
+/**
+ *  tokenId
+ */
 @property (nonatomic, strong) NSString *modelId;
 
+/**
+ *  viewModel数据数组
+ */
 @property (nonatomic, strong) NSMutableArray *secrets;
 
 - (void)reloadData;
