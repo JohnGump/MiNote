@@ -5,4 +5,4 @@ pod 'BmobSDK'
 pod 'ReactiveCocoa'
 pod 'AFNetworking-RACExtensions'
 pod 'Mantle'
-
+pod 'Masonry'
