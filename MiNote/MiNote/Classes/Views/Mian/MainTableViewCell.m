@@ -25,7 +25,6 @@
     RAC(self,titleLabel.text) = RACObserve(self, model.title);
     RAC(self,userName.text) = RACObserve(self, model.userName);
     RAC(self,passWordField.text) = RACObserve(self, model.passWord);
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
