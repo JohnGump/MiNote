@@ -28,6 +28,7 @@ PODS:
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
   - Masonry (1.0.0)
+  - pop (1.0.9)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - BmobSDK
   - Mantle
   - Masonry
+  - pop
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
@@ -49,6 +51,7 @@ SPEC CHECKSUMS:
   BmobSDK: c896d4ff3986f2b4fc8406fb2b801230f7419878
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 COCOAPODS: 0.39.0

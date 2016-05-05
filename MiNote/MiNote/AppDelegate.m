@@ -11,6 +11,9 @@
 #import "KEY.h"
 #import <BmobSDK/Bmob.h>
 #import "ViewController.h"
+#import "ZYRegisterViewController.h"
+#import "ZYBaseNavigationController.h"
+#import "ZYRegisterViewModel.h"
 @interface AppDelegate ()
 
 @end
@@ -24,8 +27,17 @@
     [Bmob registerWithAppKey:APPKEY_BMOB];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[ViewController alloc]init] ];
-    self.window.rootViewController = nav;
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[ViewController alloc]init] ];
+//    self.window.rootViewController = nav;
+    
+    
+    UINavigationController *navigation = ({
+    
+        ZYRegisterViewController *viewController = [[ZYRegisterViewController alloc] initWithViewModel:[[ZYRegisterViewModel alloc] init]];
+        [[ZYBaseNavigationController alloc] initWithRootViewController:viewController];
+    
+    });
+    self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
     return YES;
 }

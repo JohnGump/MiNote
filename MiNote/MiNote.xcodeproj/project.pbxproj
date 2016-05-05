@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185A95A31CD99DD400D55D3D /* ZYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95A21CD99DD400D55D3D /* ZYBaseViewController.m */; };
+		185A95A61CD99E0E00D55D3D /* ZYBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95A51CD99E0E00D55D3D /* ZYBasicCell.m */; };
+		185A95B21CD9A67000D55D3D /* ZYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95B11CD9A67000D55D3D /* ZYRegisterViewController.m */; };
+		185A95B61CD9BFF700D55D3D /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95B51CD9BFF700D55D3D /* AccountCell.m */; };
+		185A95B81CD9C38400D55D3D /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 185A95B71CD9C38400D55D3D /* default_icon.png */; };
+		185A95BE1CD9C98E00D55D3D /* ZYRegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95BD1CD9C98E00D55D3D /* ZYRegisterViewModel.m */; };
+		185A95CA1CD9D11D00D55D3D /* ZYBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95C91CD9D11D00D55D3D /* ZYBaseNavigationController.m */; };
+		185A95CD1CD9E9C700D55D3D /* ZYBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A95CC1CD9E9C700D55D3D /* ZYBaseViewModel.m */; };
 		2E0083161C6479CA00BAA074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083151C6479CA00BAA074 /* main.m */; };
 		2E0083191C6479CA00BAA074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083181C6479CA00BAA074 /* AppDelegate.m */; };
 		2E0083211C6479CA00BAA074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0083201C6479CA00BAA074 /* Assets.xcassets */; };
@@ -67,6 +75,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185A95A11CD99DD400D55D3D /* ZYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBaseViewController.h; sourceTree = "<group>"; };
+		185A95A21CD99DD400D55D3D /* ZYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBaseViewController.m; sourceTree = "<group>"; };
+		185A95A41CD99E0E00D55D3D /* ZYBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBasicCell.h; sourceTree = "<group>"; };
+		185A95A51CD99E0E00D55D3D /* ZYBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBasicCell.m; sourceTree = "<group>"; };
+		185A95AE1CD9A20800D55D3D /* ZYReactiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYReactiveView.h; sourceTree = "<group>"; };
+		185A95AF1CD9A3B700D55D3D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		185A95B01CD9A67000D55D3D /* ZYRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRegisterViewController.h; sourceTree = "<group>"; };
+		185A95B11CD9A67000D55D3D /* ZYRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRegisterViewController.m; sourceTree = "<group>"; };
+		185A95B41CD9BFF700D55D3D /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
+		185A95B51CD9BFF700D55D3D /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
+		185A95B71CD9C38400D55D3D /* default_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_icon.png; sourceTree = "<group>"; };
+		185A95BC1CD9C98E00D55D3D /* ZYRegisterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRegisterViewModel.h; sourceTree = "<group>"; };
+		185A95BD1CD9C98E00D55D3D /* ZYRegisterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRegisterViewModel.m; sourceTree = "<group>"; };
+		185A95C81CD9D11D00D55D3D /* ZYBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBaseNavigationController.h; sourceTree = "<group>"; };
+		185A95C91CD9D11D00D55D3D /* ZYBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBaseNavigationController.m; sourceTree = "<group>"; };
+		185A95CB1CD9E9C700D55D3D /* ZYBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBaseViewModel.h; sourceTree = "<group>"; };
+		185A95CC1CD9E9C700D55D3D /* ZYBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBaseViewModel.m; sourceTree = "<group>"; };
 		2989407DF6C48D9C0A7345A6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2E0083111C6479CA00BAA074 /* MiNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0083151C6479CA00BAA074 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,6 +203,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		185A95A01CD99C8A00D55D3D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				185A95A11CD99DD400D55D3D /* ZYBaseViewController.h */,
+				185A95A21CD99DD400D55D3D /* ZYBaseViewController.m */,
+				185A95C81CD9D11D00D55D3D /* ZYBaseNavigationController.h */,
+				185A95C91CD9D11D00D55D3D /* ZYBaseNavigationController.m */,
+				185A95A41CD99E0E00D55D3D /* ZYBasicCell.h */,
+				185A95A51CD99E0E00D55D3D /* ZYBasicCell.m */,
+				185A95AE1CD9A20800D55D3D /* ZYReactiveView.h */,
+				185A95CB1CD9E9C700D55D3D /* ZYBaseViewModel.h */,
+				185A95CC1CD9E9C700D55D3D /* ZYBaseViewModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		185A95B31CD9BFA400D55D3D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				185A95B41CD9BFF700D55D3D /* AccountCell.h */,
+				185A95B51CD9BFF700D55D3D /* AccountCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		2E0083081C6479CA00BAA074 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +293,7 @@
 		2E5881D41C6C5D3900617114 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				185A95AF1CD9A3B700D55D3D /* PrefixHeader.pch */,
 				2E5881FA1C6DF76C00617114 /* FJColor.h */,
 				2E5881FB1C6DF76C00617114 /* FJColor.m */,
 				2E5881D91C6C94CD00617114 /* SMS_SDK */,
@@ -275,6 +326,7 @@
 		2E5882021C6E1C0600617114 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				185A95B71CD9C38400D55D3D /* default_icon.png */,
 				2E5882031C6E1C3700617114 /* icon_lock@2x.png */,
 				2E5882041C6E1C3700617114 /* icon_lock@3x.png */,
 				2E5882051C6E1C3700617114 /* icon_phone@2x.png */,
@@ -286,6 +338,8 @@
 		2E58820E1C6E20B700617114 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				185A95BC1CD9C98E00D55D3D /* ZYRegisterViewModel.h */,
+				185A95BD1CD9C98E00D55D3D /* ZYRegisterViewModel.m */,
 				2E58820F1C6E20B700617114 /* SViewModel.h */,
 				2E5882101C6E20B700617114 /* SViewModel.m */,
 			);
@@ -332,6 +386,8 @@
 				2E5882221C6F260200617114 /* RegisterViewController.h */,
 				2E5882231C6F260200617114 /* RegisterViewController.m */,
 				2E5882241C6F260200617114 /* RegisterViewController.xib */,
+				185A95B01CD9A67000D55D3D /* ZYRegisterViewController.h */,
+				185A95B11CD9A67000D55D3D /* ZYRegisterViewController.m */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -421,6 +477,8 @@
 		2E7DBC861C6B549100E33585 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				185A95B31CD9BFA400D55D3D /* cell */,
+				185A95A01CD99C8A00D55D3D /* Base */,
 				2E5882381C6F2AFF00617114 /* AddAccountView */,
 				2E58821D1C6F260200617114 /* Mian */,
 				2E58821E1C6F260200617114 /* Register */,
@@ -511,7 +569,7 @@
 				TargetAttributes = {
 					2E0083101C6479CA00BAA074 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = S2V9M6R7D7;
+						DevelopmentTeam = F6ZL955X8R;
 					};
 					2E0083291C6479CA00BAA074 = {
 						CreatedOnToolsVersion = 7.2;
@@ -549,6 +607,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185A95B81CD9C38400D55D3D /* default_icon.png in Resources */,
 				2E58822D1C6F263B00617114 /* ViewController.xib in Resources */,
 				2E5882261C6F260200617114 /* RegisterTableViewCell.xib in Resources */,
 				2E5882091C6E1C3700617114 /* icon_phone@2x.png in Resources */,
@@ -634,22 +693,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185A95B21CD9A67000D55D3D /* ZYRegisterViewController.m in Sources */,
 				2E5882521C6F6B9300617114 /* AddAccountViewModel.m in Sources */,
+				185A95A61CD99E0E00D55D3D /* ZYBasicCell.m in Sources */,
 				2E5881D81C6C5EC400617114 /* NSData+AES.m in Sources */,
 				2E5882151C6E22D200617114 /* RegisterModel.m in Sources */,
+				185A95B61CD9BFF700D55D3D /* AccountCell.m in Sources */,
 				2E0083191C6479CA00BAA074 /* AppDelegate.m in Sources */,
 				2E5882111C6E20B700617114 /* SViewModel.m in Sources */,
 				2E5881FC1C6DF76C00617114 /* FJColor.m in Sources */,
+				185A95A31CD99DD400D55D3D /* ZYBaseViewController.m in Sources */,
 				2E5882421C6F2BE500617114 /* AddAccountViewController.m in Sources */,
 				2E58822C1C6F263B00617114 /* ViewController.m in Sources */,
 				2E5882361C6F271600617114 /* MainTableViewCell.m in Sources */,
 				2E58823E1C6F2B7200617114 /* SecretModel.m in Sources */,
+				185A95CD1CD9E9C700D55D3D /* ZYBaseViewModel.m in Sources */,
 				2E0083161C6479CA00BAA074 /* main.m in Sources */,
 				2E5882271C6F260200617114 /* RegisterViewController.m in Sources */,
 				2E58824A1C6F5F1C00617114 /* DataLoad.m in Sources */,
+				185A95CA1CD9D11D00D55D3D /* ZYBaseNavigationController.m in Sources */,
 				2E5882461C6F58BF00617114 /* AddAccountModel.m in Sources */,
 				2E58824E1C6F6AFF00617114 /* AddAccountTableViewCell.m in Sources */,
 				2E58821A1C6F20C400617114 /* mainViewModel.m in Sources */,
+				185A95BE1CD9C98E00D55D3D /* ZYRegisterViewModel.m in Sources */,
 				2E5882251C6F260200617114 /* RegisterTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,17 +865,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MiNote/Classes/Other/SMS_SDK",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MiNote/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = MiNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = win.FreeJ.MiNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -819,18 +888,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MiNote/Classes/Other/SMS_SDK",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MiNote/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = MiNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = win.FreeJ.MiNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d654338b-a121-4b8e-bbae-6356d34a5cd4";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
