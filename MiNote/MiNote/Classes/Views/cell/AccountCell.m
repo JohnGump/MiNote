@@ -7,8 +7,8 @@
 //
 
 #import "AccountCell.h"
-
-
+#import "CellDataAdapter.h"
+#import "SecretModel.h"
 @interface AccountCell()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *headImage;
@@ -30,6 +30,12 @@
 -(void)loadContent
 {
     //添加数据
+    if (self.dataAdapter.data) {
+        SecretModel *model = self.dataAdapter.data;
+        self.titleLabel.text = model.userName;
+        self.headImage.image = model.iconImage;
+        self.password.text = model.passWord;
+    }
     
 }
 
@@ -79,9 +85,7 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-    
     [super setHighlighted:highlighted animated:animated];
-    
     if (self.highlighted) {
         
         POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewScaleXY];

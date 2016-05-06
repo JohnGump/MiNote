@@ -13,12 +13,13 @@
 UITextFieldDelegate
 >
 
-@property (nonatomic, copy) NSString *Phone;
-@property (nonatomic, copy) NSString *verificationCode;
-@property (nonatomic, assign) BOOL isEdit;
-
+@property (nonatomic, copy  ) NSString   *Phone;
+@property (nonatomic, copy  ) NSString   *verificationCode;
 @property (nonatomic, strong) RACSubject *getVerification;
+@property (nonatomic, strong) RACSubject *complete;
+@property (nonatomic, assign) BOOL       isEdit;
 
+- (void)commitVerificationCode;
 
 
 @end

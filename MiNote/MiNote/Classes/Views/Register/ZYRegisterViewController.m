@@ -30,7 +30,20 @@ UITextFieldDelegate
     [super viewDidLoad];
     self.title = @"验证手机号";
     [self createView];
+    
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStyleDone target:self action:@selector(complete:)];
+    self.navigationItem.rightBarButtonItem = right;
+    
+    
 }
+
+- (void)complete:(UIBarButtonItem *)sender
+{
+    
+    
+}
+
+
 
 - (void)createView
 {
@@ -153,6 +166,9 @@ UITextFieldDelegate
     RAC(self.verificationCode,enabled) = RACObserve(self.viewModel, isEdit);
     
     RAC(self.viewModel,getVerification) = [self.verificationCode rac_signalForControlEvents:UIControlEventTouchUpInside];
+    [self.viewModel.complete subscribeNext:^(id x) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 

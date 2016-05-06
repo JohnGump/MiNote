@@ -98,6 +98,7 @@
 }
 
 - (void)commitVerificationCode {
+    
     if ([self.phoneNumberTextField.text isEqualToString:@"000"] && [self.verifyTextField.text isEqualToString:@"0000"]) {
         [self login];
         return;

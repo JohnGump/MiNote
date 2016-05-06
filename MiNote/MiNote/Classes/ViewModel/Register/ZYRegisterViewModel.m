@@ -7,7 +7,9 @@
 //
 
 #import "ZYRegisterViewModel.h"
-
+#import <SMS_SDK/SMSSDK.h>
+#import <BmobSDK/Bmob.h>
+#import "KEY.h"
 @implementation ZYRegisterViewModel
 
 - (instancetype)init
@@ -18,10 +20,64 @@
     return self;
 }
 
+- (void)commitVerificationCode
+{
+    if ([self.Phone isEqualToString:@"000"] && [self.verificationCode isEqualToString:@"0000"]) {
+        [self login];
+        return;
+    }
+    [SMSSDK commitVerificationCode:self.verificationCode phoneNumber:self.Phone zone:@"86" result:^(NSError *error) {
+        NSLog(@"%@",error);
+        if (error) {
+            return;
+        }
+        [self login];
+    }];
+
+}
+
+- (void)login
+{
+    __weak typeof(self) weakSelf = self;
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"MiNote"];
+    //查找GameScore表里面id为0c6db13c的数据
+    [bquery whereKey:@"userName" equalTo:self.Phone];
+    [bquery selectKeys:@[@"objectId"]];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count == 0) {
+            BmobObject *gameScore = [BmobObject objectWithClassName:@"MiNote"];
+            [gameScore setObject:self.Phone forKey:@"userName"];
+            [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                NSLog(@"%d%@",isSuccessful,error);
+                //进行操作
+                [self login];
+            }];
+        } else {
+            BmobObject *receive = array[0];
+            NSLog(@"%@",receive.objectId);
+            [self saveToken:receive.objectId];
+        }
+    }];
+
+    
+}
+- (void)saveToken:(NSString *)token {
+    NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
+    [us setValue:token forKeyPath:TOKEN];
+    [self.complete sendNext:token];
+  
+}
+
 - (void)monitoring
 {
     [RACObserve(self, Phone) subscribeNext:^(id x) {
         self.isEdit = [self JudgePhoneNumber:(NSString *)x];
+    }];
+    
+    [self.getVerification subscribeNext:^(id x) {
+        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.Phone zone:@"86" customIdentifier:nil result:^(NSError *error) {
+            NSLog(@"发送成功,%@",error);
+        }];
     }];
 }
 
@@ -37,6 +93,14 @@
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
     
     return [regextestmobile evaluateWithObject:str];
+}
+
+- (RACSubject *)complete
+{
+    if (!_complete) {
+        _complete = [RACSubject subject];
+    }
+    return _complete;
 }
 
 
