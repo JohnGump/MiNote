@@ -7,8 +7,36 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CellDataAdapter;
 
 @interface ZYBasicCell : UITableViewCell
+
+/**
+ *  CustomCell's data.
+ */
+@property (nonatomic, weak) CellDataAdapter         *dataAdapter;
+
+/**
+ *  CustomCell's data.
+ */
+@property (nonatomic, weak) id                       data;
+
+/**
+ *  CustomCell's indexPath.
+ */
+@property (nonatomic, weak) NSIndexPath             *indexPath;
+
+/**
+ *  TableView.
+ */
+@property (nonatomic, weak) UITableView             *tableView;
+
+/**
+ *  Controller.
+ */
+@property (nonatomic, weak) UIViewController        *controller;
+
+
 
 - (void)loadContent;
 - (void)setupCell;
