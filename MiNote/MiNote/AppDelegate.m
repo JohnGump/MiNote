@@ -25,14 +25,8 @@
     [SMSSDK registerApp:APPKEY_MOB
              withSecret:APPSECRET_MOB];
     [Bmob registerWithAppKey:APPKEY_BMOB];
-    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[ViewController alloc]init] ];
-//    self.window.rootViewController = nav;
-    
-    
     UINavigationController *navigation = ({
-    
         ZYRegisterViewController *viewController = [[ZYRegisterViewController alloc] initWithViewModel:[[ZYRegisterViewModel alloc] init]];
         [[ZYBaseNavigationController alloc] initWithRootViewController:viewController];
     
