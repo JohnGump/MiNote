@@ -11,11 +11,9 @@
 
 
 /**
- *  提供文件相关功能接口
+ *  提供文件相关功能接口,上传服务接口将在7月份停止，请及时更换成BmobFile上传下载
  */
 @interface BmobProFile : NSObject
-
-
 
 
 /**
@@ -40,16 +38,7 @@
  *  清除下载的图片跟缩略图图片
  */
 +(void)cleanCache;
-/**
- *  缩略图处理
- *
- *  @param filename 图片的文件名
- *  @param ruleID   规格ID
- *  @param block    处理的结果信息，包括是否成功，错误信息，文件名，文件的url地址
- */
-+(void)thumbnailImageWithFilename:(NSString *)filename
-                           ruleID:(NSUInteger)ruleID
-                      resultBlock:(BmobFileResultBlock)block;
+
 
 /**
  *  本地缩略图处理
@@ -113,50 +102,4 @@
 +(void) deleteFileWithFileName:(NSString*)fileName
                   callBack:(BmobBooleanResultBlock)block;
 
-
-/**
- *  上传文件
- *
- *  @param path          路径
- *  @param block         上传的结果
- *  @param progressBlock 上传的进度
- */
-+(void)uploadFileWithPath:(NSString *)path
-                    block:(BmobFileResultBlock)block
-                 progress:(BmobProgressBlock)progressBlock;
-
-/**
- *  上传文件
- *
- *  @param filename      文件名(带后缀)
- *  @param data          文件的数据
- *  @param block         上传的结果
- *  @param progressBlock 上传的进度
- */
-+(void)uploadFileWithFilename:(NSString *)filename
-                     fileData:(NSData *)data
-                        block:(BmobFileResultBlock)block
-                     progress:(BmobProgressBlock)progressBlock;
-
-/**
- *  批量上传文件
- *
- *  @param array 文件的路径
- */
-+(void)uploadFilesWithPaths:(NSArray *)array
-                resultBlock:(BmobBatchFileUploadResultBlock)block
-                   progress:(BmobIndexAndProgressBlock)progress;
-
-
-/**
- *  批量上传文件
- *
- *  @param dataArray 数组中存放的NSDictionary，NSDictionary里面的格式为@{@"filename":@"你的文件名",@"data":文件的data}
- *  文件名需要带后缀
- *  @param block     上传文件的结果回调
- *  @param progress  上传文件的进度回调，表示当前是第几个，进度多少
- */
-+(void)uploadFilesWithDatas:(NSArray *)dataArray
-                resultBlock:(BmobBatchFileUploadResultBlock)block
-                   progress:(BmobIndexAndProgressBlock)progress;
 @end

@@ -1,1 +1,0 @@
-../../../SQLitePersistentObjects/SQLitePersistentObjects/SQLitePersistentObjects/NSString-SQLiteColumnName.h

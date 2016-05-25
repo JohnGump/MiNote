@@ -1,1 +1,0 @@
-../../../SQLitePersistentObjects/SQLitePersistentObjects/SQLitePersistentObjects/NSString-SQLitePersistence.h

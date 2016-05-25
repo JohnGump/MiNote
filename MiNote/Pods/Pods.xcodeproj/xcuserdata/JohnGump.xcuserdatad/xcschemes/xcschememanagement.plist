@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,11 +35,6 @@
 			<false/>
 		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SQLitePersistentObjects.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>555A474A6D00881B7299723EBBDAFAA7</key>
+		<key>8FAEEB0AEF1FCF6DE35EF9E5F1C13EF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56FDAA8C012C3FDCA21AE733E87E7C7A</key>
+		<key>CA4F86391CC912646B1EDEC59CCF3A14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA45C81A9FB815E2C5B2276B1FBD134E</key>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

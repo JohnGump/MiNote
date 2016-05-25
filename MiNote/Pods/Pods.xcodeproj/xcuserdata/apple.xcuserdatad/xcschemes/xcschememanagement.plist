@@ -34,11 +34,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SQLitePersistentObjects.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,6 +57,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3A19FC887BD26A2DAEA4C5ED19452119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>426BC4549A625B5E1E4200D5261A98BF</key>
 		<dict>
 			<key>primary</key>
@@ -72,17 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>555A474A6D00881B7299723EBBDAFAA7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>56FDAA8C012C3FDCA21AE733E87E7C7A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DA45C81A9FB815E2C5B2276B1FBD134E</key>
+		<key>8A24DD322DE63BF7B32A26D89653CD74</key>
 		<dict>
 			<key>primary</key>
 			<true/>

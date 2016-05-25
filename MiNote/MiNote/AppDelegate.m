@@ -10,10 +10,9 @@
 #import <SMS_SDK/SMSSDK.h>
 #import "KEY.h"
 #import <BmobSDK/Bmob.h>
-#import "ViewController.h"
-#import "ZYRegisterViewController.h"
-#import "ZYBaseNavigationController.h"
-#import "ZYRegisterViewModel.h"
+#import "ALWMainViewController.h"
+#import "ALWBaseNavigationController.h"
+#import "ALWMainViewModel.h"
 @interface AppDelegate ()
 
 @end
@@ -26,11 +25,8 @@
              withSecret:APPSECRET_MOB];
     [Bmob registerWithAppKey:APPKEY_BMOB];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    UINavigationController *navigation = ({
-        ZYRegisterViewController *viewController = [[ZYRegisterViewController alloc] initWithViewModel:[[ZYRegisterViewModel alloc] init]];
-        [[ZYBaseNavigationController alloc] initWithRootViewController:viewController];
-    
-    });
+    ALWMainViewController *viewController = [[ALWMainViewController alloc] initWithViewModel:[[ALWMainViewModel alloc] init]];
+    UINavigationController *navigation = [[ALWBaseNavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
     return YES;
