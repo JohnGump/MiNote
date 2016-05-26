@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184B6C8D1CF68BD300C92A2D /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184B6C8A1CF68BD300C92A2D /* AccountCell.m */; };
+		184B6C8E1CF68BD300C92A2D /* NoDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184B6C8C1CF68BD300C92A2D /* NoDataCell.m */; };
 		2E0083161C6479CA00BAA074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083151C6479CA00BAA074 /* main.m */; };
 		2E0083191C6479CA00BAA074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0083181C6479CA00BAA074 /* AppDelegate.m */; };
 		2E0083241C6479CA00BAA074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E0083221C6479CA00BAA074 /* LaunchScreen.storyboard */; };
@@ -32,9 +34,7 @@
 		6101C2861CF5E832004BBBC8 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6101C2821CF5E832004BBBC8 /* MOBFoundation.framework */; };
 		6101C2871CF5E832004BBBC8 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6101C2831CF5E832004BBBC8 /* SMS_SDK.framework */; };
 		6101C2C51CF5E83B004BBBC8 /* AddAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C28C1CF5E83B004BBBC8 /* AddAccountModel.m */; };
-		6101C2C61CF5E83B004BBBC8 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C28F1CF5E83B004BBBC8 /* AccountCell.m */; };
 		6101C2CB1CF5E83B004BBBC8 /* ALWZYAddAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C2971CF5E83B004BBBC8 /* ALWZYAddAccountController.m */; };
-		6101C2CC1CF5E83B004BBBC8 /* NoDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C2991CF5E83B004BBBC8 /* NoDataCell.m */; };
 		6101C2CE1CF5E83B004BBBC8 /* ALWZYAddaccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C29E1CF5E83B004BBBC8 /* ALWZYAddaccountViewModel.m */; };
 		6101C2CF1CF5E83B004BBBC8 /* ALWRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C2A21CF5E83B004BBBC8 /* ALWRegisterModel.m */; };
 		6101C2D01CF5E83B004BBBC8 /* ALWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6101C2A51CF5E83B004BBBC8 /* ALWRegisterViewController.m */; };
@@ -72,6 +72,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184B6C891CF68BD300C92A2D /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
+		184B6C8A1CF68BD300C92A2D /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
+		184B6C8B1CF68BD300C92A2D /* NoDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoDataCell.h; sourceTree = "<group>"; };
+		184B6C8C1CF68BD300C92A2D /* NoDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoDataCell.m; sourceTree = "<group>"; };
 		2989407DF6C48D9C0A7345A6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2E0083111C6479CA00BAA074 /* MiNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0083151C6479CA00BAA074 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -119,12 +123,8 @@
 		6101C2841CF5E832004BBBC8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		6101C28B1CF5E83B004BBBC8 /* AddAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountModel.h; sourceTree = "<group>"; };
 		6101C28C1CF5E83B004BBBC8 /* AddAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountModel.m; sourceTree = "<group>"; };
-		6101C28E1CF5E83B004BBBC8 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
-		6101C28F1CF5E83B004BBBC8 /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
 		6101C2961CF5E83B004BBBC8 /* ALWZYAddAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALWZYAddAccountController.h; sourceTree = "<group>"; };
 		6101C2971CF5E83B004BBBC8 /* ALWZYAddAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALWZYAddAccountController.m; sourceTree = "<group>"; };
-		6101C2981CF5E83B004BBBC8 /* NoDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoDataCell.h; sourceTree = "<group>"; };
-		6101C2991CF5E83B004BBBC8 /* NoDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoDataCell.m; sourceTree = "<group>"; };
 		6101C29D1CF5E83B004BBBC8 /* ALWZYAddaccountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALWZYAddaccountViewModel.h; sourceTree = "<group>"; };
 		6101C29E1CF5E83B004BBBC8 /* ALWZYAddaccountViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALWZYAddaccountViewModel.m; sourceTree = "<group>"; };
 		6101C2A11CF5E83B004BBBC8 /* ALWRegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALWRegisterModel.h; sourceTree = "<group>"; };
@@ -394,12 +394,8 @@
 		6101C28D1CF5E83B004BBBC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6101C28E1CF5E83B004BBBC8 /* AccountCell.h */,
-				6101C28F1CF5E83B004BBBC8 /* AccountCell.m */,
 				6101C2961CF5E83B004BBBC8 /* ALWZYAddAccountController.h */,
 				6101C2971CF5E83B004BBBC8 /* ALWZYAddAccountController.m */,
-				6101C2981CF5E83B004BBBC8 /* NoDataCell.h */,
-				6101C2991CF5E83B004BBBC8 /* NoDataCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,6 +468,10 @@
 		6101C2AF1CF5E83B004BBBC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				184B6C891CF68BD300C92A2D /* AccountCell.h */,
+				184B6C8A1CF68BD300C92A2D /* AccountCell.m */,
+				184B6C8B1CF68BD300C92A2D /* NoDataCell.h */,
+				184B6C8C1CF68BD300C92A2D /* NoDataCell.m */,
 				6101C2B61CF5E83B004BBBC8 /* ALWMainViewController.h */,
 				6101C2B71CF5E83B004BBBC8 /* ALWMainViewController.m */,
 			);
@@ -707,16 +707,15 @@
 				6101C2731CF5E81A004BBBC8 /* ALWBaseNavigationController.m in Sources */,
 				6101C2761CF5E81A004BBBC8 /* ALWBasicCell.m in Sources */,
 				6101C2CB1CF5E83B004BBBC8 /* ALWZYAddAccountController.m in Sources */,
+				184B6C8D1CF68BD300C92A2D /* AccountCell.m in Sources */,
 				6101C2751CF5E81A004BBBC8 /* ALWBaseViewModel.m in Sources */,
 				6101C2D31CF5E83B004BBBC8 /* ALWMainViewSecretModel.m in Sources */,
 				6101C2ED1CF5F536004BBBC8 /* UIView+ALWHUD.m in Sources */,
-				6101C2CC1CF5E83B004BBBC8 /* NoDataCell.m in Sources */,
 				6101C2D01CF5E83B004BBBC8 /* ALWRegisterViewController.m in Sources */,
 				6101C2791CF5E81A004BBBC8 /* ALWPopOverView.m in Sources */,
 				6101C2CF1CF5E83B004BBBC8 /* ALWRegisterModel.m in Sources */,
 				6101C2781CF5E81A004BBBC8 /* NSData+AES.m in Sources */,
 				6101C27B1CF5E81A004BBBC8 /* ALWZYTextField.m in Sources */,
-				6101C2C61CF5E83B004BBBC8 /* AccountCell.m in Sources */,
 				6101C2DA1CF5E83B004BBBC8 /* ALWMainViewModel.m in Sources */,
 				6101C2741CF5E81A004BBBC8 /* ALWBaseViewController.m in Sources */,
 				6101C2EA1CF5F344004BBBC8 /* UIColor+ALWHexString.m in Sources */,
@@ -726,6 +725,7 @@
 				6101C2C51CF5E83B004BBBC8 /* AddAccountModel.m in Sources */,
 				6101C2D81CF5E83B004BBBC8 /* ALWMainViewController.m in Sources */,
 				2E0083161C6479CA00BAA074 /* main.m in Sources */,
+				184B6C8E1CF68BD300C92A2D /* NoDataCell.m in Sources */,
 				6101C27A1CF5E81A004BBBC8 /* ALWZYbutton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
