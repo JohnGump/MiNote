@@ -51,26 +51,28 @@ ALWPopOverViewDelegate
 - (void)_alw_configNavigationBar
 {
     UIImage *leftImage = [UIImage imageNamed:@"tool_icon_refresh"];
-    leftImage = [leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    leftImage = [leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *rightimage = [UIImage imageNamed:@"home_add"];
-    rightimage = [rightimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    rightimage = [rightimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:leftImage style:UIBarButtonItemStylePlain target:self action:@selector(_alw_refreshData)];
-    UIBarButtonItem *addAccountButtonItem = [[UIBarButtonItem alloc] initWithImage:rightimage style:UIBarButtonItemStylePlain target:self action:@selector(_alw_addAccount)];
+//    UIBarButtonItem *addAccountButtonItem = [[UIBarButtonItem alloc] initWithImage:rightimage style:UIBarButtonItemStylePlain target:self action:@selector(_alw_addAccount)];
     
-    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [rightBtn addTarget:self action:@selector(_alw_addAccount) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.frame = CGRectMake(0, 0, 44, 44);
+    [rightBtn setImage:rightimage forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(_alw_addAccount:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = refreshButtonItem;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     //    self.navigationItem.rightBarButtonItem = addAccountButtonItem;
 }
 
-- (void)_alw_addAccount
+- (void)_alw_addAccount:(UIButton *)sender
 {
     NSArray *array = @[@"添加账号",@"设置账号"];
     ALWPopOverView *popOverView = [[ALWPopOverView alloc] initWithBounds:CGRectMake(0, 0, kMAIN_WEDITH/4,array.count*44) titleMenus:array];
     popOverView.containerBackgroudColor = [UIColor blackColor];
     popOverView.delegate = self;
-    [popOverView showFrom:_rightBtn alignStyle:ALWAlingStyle_Right];
+    [popOverView showFrom:sender alignStyle:ALWAlingStyle_Right];
 }
 
 #pragma mark -ALWPopOverVeiwDelegate

@@ -7,8 +7,9 @@
 //
 
 #import "AccountCell.h"
-#import "CellDataAdapter.h"
-#import "SecretModel.h"
+#import "ALWCellDataAdapter.h"
+
+#import "ALWMainViewSecretModel.h"
 @interface AccountCell()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *headImage;
@@ -28,7 +29,7 @@
 {
     //添加数据
     if (self.dataAdapter.data) {
-        SecretModel *model = self.dataAdapter.data;
+        ALWMainViewSecretModel *model = self.dataAdapter.data;
         self.titleLabel.text = model.userName;
         self.headImage.image = model.iconImage;
         self.password.text = model.passWord;
