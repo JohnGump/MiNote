@@ -47,7 +47,7 @@
                 aModel.accountName = [obj objectForKey:@"accountName"];
                 aModel.accountPassWord = [obj objectForKey:@"accountPassWord"];
                 
-                ALWCellDataAdapter *dataAdaper = [ALWCellDataAdapter cellDataAdapterWithCellReuseIdentifier:@"AccountCell" data:aModel cellHeight:70 cellType:0];
+                ALWCellDataAdapter *dataAdaper = [ALWCellDataAdapter cellDataAdapterWithCellReuseIdentifier:@"AccountCell" data:aModel cellHeight:120 cellType:0];
                 [self.dataSource addObject:dataAdaper];
             }
             
