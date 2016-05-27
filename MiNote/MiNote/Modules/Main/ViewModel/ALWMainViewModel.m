@@ -80,6 +80,41 @@
     [cell loadContent];
     return cell;
 }
+//将要显示cell
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.contentView.alpha = 0.3;
+    cell.contentView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    [UIView animateWithDuration:0.5 delay:0.3 usingSpringWithDamping:0.5 initialSpringVelocity:0.6 options:1 animations:^{
+        cell.contentView.alpha = 1;
+        cell.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        
+    } completion:^(BOOL finished) {
+//        cell.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    }];
+    
+}
+
+//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    ALWBasicCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+//    scaleAnimation.duration           = 0.1f;
+//    scaleAnimation.toValue            = [NSValue valueWithCGPoint:CGPointMake(0.8, 0.8)];
+//    [cell.contentView pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    ALWBasicCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+//    scaleAnimation.toValue             = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+//    scaleAnimation.velocity            = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+//    scaleAnimation.springBounciness    = 20.f;
+//    [cell.contentView pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+//}
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
