@@ -7,7 +7,7 @@
 //
 
 #import "ALWBaseViewController.h"
-
+typedef void(^addResult)();
 @interface ALWZYAddAccountController : ALWBaseViewController
-
+@property (nonatomic, copy) addResult addComplete;
 @end

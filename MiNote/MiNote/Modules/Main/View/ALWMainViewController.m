@@ -39,6 +39,7 @@ ALWPopOverViewDelegate
 - (void)_alw_configSubViews
 {
     self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
+    self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableview registerClass:[ALWBasicCell class] forCellReuseIdentifier:@"ZYBasicCell"];
     [self.tableview registerClass:[AccountCell class] forCellReuseIdentifier:@"AccountCell"];
     [self.tableview registerClass:[NoDataCell class] forCellReuseIdentifier:@"NoDataCell"];
@@ -51,11 +52,11 @@ ALWPopOverViewDelegate
 - (void)_alw_configNavigationBar
 {
     UIImage *leftImage = [UIImage imageNamed:@"tool_icon_refresh"];
-//    leftImage = [leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *rightimage = [UIImage imageNamed:@"home_add"];
-//    rightimage = [rightimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:leftImage style:UIBarButtonItemStylePlain target:self action:@selector(_alw_refreshData)];
-//    UIBarButtonItem *addAccountButtonItem = [[UIBarButtonItem alloc] initWithImage:rightimage style:UIBarButtonItemStylePlain target:self action:@selector(_alw_addAccount)];
+    UIBarButtonItem *refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:leftImage
+                                                                          style:UIBarButtonItemStylePlain
+                                                                         target:self
+                                                                         action:@selector(_alw_refreshData)];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame = CGRectMake(0, 0, 44, 44);
@@ -92,13 +93,16 @@ ALWPopOverViewDelegate
     [view dismiss];
     if (index == 0) {
         ALWZYAddAccountController *viewController = [[ALWZYAddAccountController alloc] initWithViewModel:[[ALWZYAddaccountViewModel alloc] init]];
+        viewController.addComplete = ^{
+            [self.viewModel getDataList];
+        };
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 
 - (void)_alw_refreshData
 {
-    [self.tableview reloadData];
+    [self.viewModel getDataList];
 }
 
 - (void)_alw_bindViewModel:(ALWMainViewModel *)viewModel
@@ -106,16 +110,26 @@ ALWPopOverViewDelegate
     self.viewModel = viewModel;
     self.tableview.dataSource = self.viewModel;
     self.tableview.delegate = self.viewModel;
-    RAC(self.viewModel,objectId) = RACObserve(self, objectId);
+    [self.viewModel.complete subscribeNext:^(id x) {
+        [self.tableview reloadData];
+    }];
+    
    NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
     self.objectId = [us valueForKey:TOKEN];
-    if (!self.objectId) {
+    if (!self.objectId)
+    {
         UINavigationController *navigation = ({
             ALWRegisterViewController *viewController = [[ALWRegisterViewController alloc] initWithViewModel:[[ALWRegisterViewModel alloc] init]];
             [[ALWBaseNavigationController alloc] initWithRootViewController:viewController];
         });
         [self presentViewController:navigation animated:YES completion:nil];
     }
+    else
+    {
+        [self.viewModel getDataList];
+    }
+    
+    
 }
 
 @end

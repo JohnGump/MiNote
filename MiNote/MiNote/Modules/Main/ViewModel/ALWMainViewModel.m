@@ -25,36 +25,39 @@
 {
     self = [super init];
     if (self) {
-        [self objectId];
         ALWCellDataAdapter *dataAdaper = [ALWCellDataAdapter cellDataAdapterWithCellReuseIdentifier:@"NoDataCell" data:@"您还没有添加可管理的账户,点击右上角添加账户" cellHeight:kMAIN_HEIGHT cellType:0];
         [self.noDataArray addObject:dataAdaper];
     }
     return self;
 }
 
-- (void)objectID
+
+
+
+
+- (void)getDataList
 {
-    [RACObserve(self, objectId) subscribeNext:^(id x) {
-        if (self.objectId) {
-            [ALWClient GETDatablock:^(BmobObject *object, NSError *error) {
-                NSArray  *array = [object objectForKey:@"miData"];
-                NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
-                [us setValue:array forKeyPath:SECRETDATA];
-                [self.dataSource removeAllObjects];
-                if (array) {
-                    for (NSDictionary *dic in array) {
-                        ALWMainViewSecretModel *aModel = [[ALWMainViewSecretModel alloc]init];
-                        [aModel setValuesForKeysWithDictionary:dic];
-                        ALWCellDataAdapter *dataAdaper = [ALWCellDataAdapter cellDataAdapterWithCellReuseIdentifier:@"AccountCell" data:aModel cellHeight:100 cellType:0];
-                        [self.dataSource addObject:dataAdaper];
-                    }
-                }
-                
-            }];
-        }
-    }];
     
+    [ALWClient GETDatablock:^(NSArray *array, NSError *error) {
+        [self.dataSource removeAllObjects];
+        if (array) {
+            for (BmobObject *obj in array) {
+                ALWMainViewSecretModel *aModel = [[ALWMainViewSecretModel alloc]init];
+                aModel.account = [obj objectForKey:@"account"];
+                aModel.accountName = [obj objectForKey:@"accountName"];
+                aModel.accountPassWord = [obj objectForKey:@"accountPassWord"];
+                
+                ALWCellDataAdapter *dataAdaper = [ALWCellDataAdapter cellDataAdapterWithCellReuseIdentifier:@"AccountCell" data:aModel cellHeight:70 cellType:0];
+                [self.dataSource addObject:dataAdaper];
+            }
+            
+            [self.complete sendNext:[NSNumber numberWithBool:YES]];
+        }
+
+    }];
+
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -103,6 +106,14 @@
         _dataSource = [NSMutableArray array];
     }
     return _dataSource;
+}
+
+- (RACSubject *)complete
+{
+    if (!_complete) {
+        _complete = [RACSubject subject];
+    }
+    return _complete;
 }
 
 

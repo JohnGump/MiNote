@@ -18,16 +18,16 @@
 /**
  *  账号名称
  */
-@property (nonatomic, strong)NSString *title;
+@property (nonatomic, strong)NSString *account;
 
 /**
  *  账号用户名
  */
-@property (nonatomic, strong)NSString *userName;
+@property (nonatomic, strong)NSString *accountName;
 
 /**
  *  账号密码
  */
-@property (nonatomic, strong)NSString *passWord;
+@property (nonatomic, strong)NSString *accountPassWord;
 
 @end

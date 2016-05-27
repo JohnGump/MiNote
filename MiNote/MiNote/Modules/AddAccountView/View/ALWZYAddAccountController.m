@@ -11,9 +11,7 @@
 #import "ALWZYTextField.h"
 #import "ALWZYbutton.h"
 @interface ALWZYAddAccountController ()
-<
-ALWZYbuttonDelegate
->
+
 @property (nonatomic, strong) ALWZYTextField           *userTextField;
 @property (nonatomic, strong) ALWZYTextField           *paswTextField;
 @property (nonatomic, strong) ALWZYTextField           *titleTextField;
@@ -45,11 +43,10 @@ ALWZYbuttonDelegate
     self.bacView.layer.shadowRadius      = 5.0f;
     self.bacView.layer.shadowOffset      = CGSizeMake(0.0, 5.0f);
     self.bacView.layer.shadowOpacity     = 0.5;
+    
     self.button.backgroundColor     = [UIColor redColor];
     self.button.tintColor           = [UIColor whiteColor];
-    self.button.layer.masksToBounds = YES;
-    self.button.layer.cornerRadius  = 40/2;
-    self.button.delegate            = self;
+    [self.button setBackgroundColor:[UIColor colorWithRed:1 green:0.f/255.0f blue:128.0f/255.0f alpha:1]];
     [self.button setTitle:@"确定" forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(buttonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.userTextField.title.text   = @"用户名:";
@@ -88,7 +85,7 @@ ALWZYbuttonDelegate
     [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.bacView.mas_centerX);
         make.bottom.equalTo(self.bacView.mas_bottom).offset(-20);
-        make.size.mas_equalTo(CGSizeMake(100, 40));
+        make.size.mas_equalTo(CGSizeMake(kMAIN_WEDITH/3, 40));
     }];
     
     [self.bacView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,33 +96,27 @@ ALWZYbuttonDelegate
     }];
 }
 
-#pragma mark ALWZYbutton
+
+
 - (void)buttonDidClicked:(ALWZYbutton *)sender
 {
-    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.bacView.mas_centerX);
-        make.bottom.equalTo(self.bacView.mas_bottom).offset(-20);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
+    [self.viewModel upDateDatawithData:^{
+        [sender ExitAnimationCompletion:^{
+            self.addComplete();
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }];
+    } failed:^(NSString *error) {
+        [self.button setTitle:error forState:UIControlStateNormal];
+        [sender ErrorRevertAnimationCompletion:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [sender setTitle:@"确定" forState:UIControlStateNormal];
+            });
+        }];
     }];
-    [self.view setNeedsUpdateConstraints];
-    // 调用此方法告诉self.view检测是否需要更新约束，若需要则更新，下面添加动画效果才起作用
-    [self.view updateConstraintsIfNeeded];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.view layoutIfNeeded];
-    }];
-    [self.button beginAnimation];
 }
 
-- (void)beginAnimation:(ALWZYbutton *)sender
-{
-#warning HTTPrequest
-}
 
-- (void)endAnimation:(ALWZYbutton *)sender
-{
-    
-}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -134,8 +125,14 @@ ALWZYbuttonDelegate
 
 - (void)_alw_bindViewModel:(ALWZYAddaccountViewModel *)viewModel
 {
-    
     self.viewModel = viewModel;
+    
+    RAC(self.viewModel,title) = [self.titleTextField.textField rac_textSignal];
+    RAC(self.viewModel,userName) = [self.userTextField.textField rac_textSignal];
+    RAC(self.viewModel,passWord) = [self.paswTextField.textField rac_textSignal];
+    
+    
+    
 }
 
 

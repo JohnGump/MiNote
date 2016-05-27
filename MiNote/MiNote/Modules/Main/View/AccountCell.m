@@ -30,9 +30,9 @@
     //添加数据
     if (self.dataAdapter.data) {
         ALWMainViewSecretModel *model = self.dataAdapter.data;
-        self.titleLabel.text = model.userName;
+        self.titleLabel.text = model.accountName;
         self.headImage.image = model.iconImage;
-        self.password.text = model.passWord;
+        self.password.text = model.accountPassWord;
     }
 }
 
@@ -43,7 +43,7 @@
     self.titleLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.65f];
     self.headImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_lock"]];;
     self.password = [[UILabel alloc] init];
-    self.password.font = [UIFont systemFontOfSize:8.0f];
+    self.password.font = [UIFont systemFontOfSize:15.0f];
     self.password.textColor = [UIColor grayColor];
     [self addSubview:self.titleLabel];
     [self addSubview:self.headImage];
@@ -67,7 +67,7 @@
         make.top.equalTo(self.headImage.mas_centerY);
         make.left.equalTo(self.headImage.mas_right).offset(10);
         make.right.equalTo(self).offset(10);
-        make.height.equalTo(@(10));
+        make.height.equalTo(@(20));
     }];
 }
 

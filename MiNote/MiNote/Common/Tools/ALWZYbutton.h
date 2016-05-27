@@ -9,21 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class ALWZYbutton;
-@protocol ALWZYbuttonDelegate <NSObject>
-
-- (void)beginAnimation:(ALWZYbutton *)sender;
 
 
-- (void)endAnimation:(ALWZYbutton *)sender;
-
-
-@end
-
-
-
+typedef void(^Completion)();
 @interface ALWZYbutton : UIButton
-@property (nonatomic, assign) BOOL isAnimation;
-@property (nonatomic, assign) id<ALWZYbuttonDelegate>delegate;
-- (void)beginAnimation;
-- (void)endAnimation:(BOOL)result;
+- (void)startAnimation;
+-(void)setCompletion:(Completion)completion;
+-(void)ErrorRevertAnimationCompletion:(Completion)completion;
+-(void)ExitAnimationCompletion:(Completion)completion;
 @end

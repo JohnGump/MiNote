@@ -19,6 +19,7 @@ UITextFieldDelegate
 @property (nonatomic, strong) RACSubject *complete;
 @property (nonatomic, strong) RACSubject *countdownBegin;
 @property (nonatomic, strong) RACSubject *countdownEnd;
+@property (nonatomic, strong) RACSubject *httpError;
 @property (nonatomic, assign) BOOL       isEdit;
 
 - (void)commitVerificationCode;
