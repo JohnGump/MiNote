@@ -10,26 +10,34 @@
 #import "KEY.h"
 @implementation ALWClient
 
-+ (void)GETDatablock:(BmobObjectResultBlock)block {
++ (void)GETDatablock:(BmobObjectArrayResultBlock)block {
     
     NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
     NSString *objectid = [us valueForKeyPath:TOKEN];
     
     
     BmobQuery *query = [BmobQuery queryWithClassName:@"MiNote"];
-    [query getObjectInBackgroundWithId:objectid block:^(BmobObject *object, NSError *error) {
-        block(object,error);
+    [query whereKey:@"userName" equalTo:objectid];
+    [query selectKeys:@[@"account",@"accountName",@"accountPassWord"]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        block(array,error);
     }];
 }
 
 + (void)UPdateDatawithData:(NSArray *)dataArray block:(BmobBooleanResultBlock)block{
     NSUserDefaults *us = [NSUserDefaults standardUserDefaults];
     NSString *objectid = [us valueForKeyPath:TOKEN];
-    BmobObject *object = [BmobObject objectWithoutDatatWithClassName:@"MiNote" objectId:objectid];
-    [object setObject:dataArray forKey:@"miData"];
-    [object updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+    BmobObject *account = [BmobObject objectWithClassName:@"MiNote"];
+    NSDictionary *dict = [dataArray firstObject];
+    [account setObject:objectid forKey:@"userName"];
+    [account setObject:dict[@"title"] forKey:@"account"];
+    [account setObject:dict[@"userName"] forKey:@"accountName"];
+    [account setObject:dict[@"passWord"] forKey:@"accountPassWord"];
+    
+    [account saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         block(isSuccessful,error);
     }];
+    
 }
 
 

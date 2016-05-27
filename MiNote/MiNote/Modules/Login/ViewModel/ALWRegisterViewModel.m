@@ -39,6 +39,7 @@
     [SMSSDK commitVerificationCode:self.verificationCode phoneNumber:self.Phone zone:@"86" result:^(NSError *error) {
         NSLog(@"%@",error);
         if (error) {
+            [self.httpError sendNext:error.localizedDescription];
             return;
         }
         [self login];
@@ -47,18 +48,24 @@
 
 - (void)login
 {
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"MiNote"];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"user"];
     //查找GameScore表里面id为0c6db13c的数据
-    [bquery whereKey:@"userName" equalTo:self.Phone];
+    [bquery whereKey:@"username" equalTo:self.Phone];
     [bquery selectKeys:@[@"objectId"]];
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (array.count == 0) {
-            BmobObject *gameScore = [BmobObject objectWithClassName:@"MiNote"];
-            [gameScore setObject:self.Phone forKey:@"userName"];
+            BmobObject *gameScore = [BmobObject objectWithClassName:@"user"];
+            [gameScore setObject:self.Phone forKey:@"username"];
             [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-                NSLog(@"%d%@",isSuccessful,error);
+                if (error) {
+                    NSLog(@"%@",error);
+                    [self.httpError sendNext:error.localizedDescription];
+                    return;
+                }else{
+                    
+                    [self login];
+                }
                 //进行操作
-                [self login];
             }];
         } else {
             BmobObject *receive = array[0];
@@ -82,8 +89,13 @@
     [self.getVerification subscribeNext:^(id x) {
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.Phone zone:@"86" customIdentifier:nil result:^(NSError *error) {
             NSLog(@"发送成功,%@",error);
-            [self.countdownBegin sendNext:@"60"];
-          timer =  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAdvanced:) userInfo:nil repeats:YES];
+            if (error) {
+               NSString *str = error.userInfo[@"getVerificationCode"];
+                [self.httpError sendNext:str];
+            }else{
+                [self.countdownBegin sendNext:@"60"];
+                timer =  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAdvanced:) userInfo:nil repeats:YES];
+            }
         }];
     }];
 }
@@ -151,6 +163,14 @@
     }
     return _getVerification;
 }
+- (RACSubject *)httpError
+{
+    if (!_httpError) {
+        _httpError = [RACSubject subject];
+    }
+    return _httpError;
+}
+
 
 
 @end

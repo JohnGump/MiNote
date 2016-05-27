@@ -49,7 +49,7 @@ static NSInteger const ALWHUDTitleMaxLength = 12;
     MBProgressHUD *hud = [self _alw_hud];
     hud.mode = MBProgressHUDModeText;
     [self _alw_hud:hud showsText:text];
-    [hud hide:YES afterDelay:1.3f];
+    [hud hide:YES afterDelay:2.0f];
     if (block) {
         [hud setCompletionBlock:block];
     }

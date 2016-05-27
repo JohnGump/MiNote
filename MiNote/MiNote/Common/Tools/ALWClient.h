@@ -15,7 +15,7 @@
  *
  *  @param block 回调block
  */
-+ (void)GETDatablock:(BmobObjectResultBlock)block;
++ (void)GETDatablock:(BmobObjectArrayResultBlock)block;
 
 /**
  *  同步上传数据

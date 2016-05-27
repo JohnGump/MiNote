@@ -8,6 +8,7 @@
 
 #import "ALWRegisterViewController.h"
 #import "ALWRegisterViewModel.h"
+#import "UIView+ALWHUD.h"
 @interface ALWRegisterViewController ()
 
 <
@@ -43,7 +44,7 @@ UITextFieldDelegate
         return;
     }
     [self.viewModel invalidate];
-    [self.viewModel login];
+    [self.viewModel commitVerificationCode];
 }
 
 - (void)_alw_configNavigationBar
@@ -162,7 +163,9 @@ UITextFieldDelegate
             [self.verificationCode setTitle:@"输入手机号" forState:UIControlStateNormal];
         }
     }];
+    
     RAC(self.verificationCode,enabled) = RACObserve(self.viewModel, isEdit);
+    
     [[self.verificationCode rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify_return_if_nil(self);
         [self.viewModel.getVerification sendNext:@"发送验证码"];
@@ -182,6 +185,12 @@ UITextFieldDelegate
         self.verificationCode.userInteractionEnabled = YES;
         [self.verificationCode setTitle:@"重新发送验证码" forState:UIControlStateNormal];
     }];
+    
+    [self.viewModel.httpError subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+        [self.view alw_showHUDWithWarningText:(NSString *)x];
+    }];
+    
 }
 
 

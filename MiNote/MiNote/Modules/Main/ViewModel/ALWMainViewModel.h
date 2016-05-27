@@ -14,5 +14,6 @@ UITableViewDelegate,
 UITableViewDataSource
 >
 @property (nonatomic, strong) NSMutableArray *dataSource;
-@property (nonatomic, strong) NSString       *objectId;
+@property (nonatomic, strong) RACSubject *complete;
+- (void)getDataList;
 @end

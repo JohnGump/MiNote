@@ -17,6 +17,7 @@
 - (MBProgressHUD *)alw_showHUDCompleteIndicatorWithText:(NSString *)text;
 - (MBProgressHUD *)alw_showHUDCompleteIndicatorWithText:(NSString *)text
                                                complete:(MBProgressHUDCompletionBlock)block;
+
 - (MBProgressHUD *)alw_showHUDCompleteIndicatorWithText:(NSString *)text
                                          hideAfterDelay:(CGFloat)delay
                                                complete:(MBProgressHUDCompletionBlock)block;
