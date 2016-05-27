@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *headImage;
 @property (nonatomic, strong) UILabel *password;
+@property (nonatomic, strong) UILongPressGestureRecognizer *longGesture;
 
 @end
 
@@ -51,6 +52,12 @@
     self.bcgdView.layer.shadowColor = [[UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000] CGColor];
     
     
+    self.longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longGesture:)];
+    self.longGesture.minimumPressDuration = 1.5;
+    self.longGesture.numberOfTouchesRequired = 1;
+    [self.bcgdView addGestureRecognizer:self.longGesture];
+    
+    
     self.titleLabel           = [[UILabel alloc] init];
     self.titleLabel.font      = [UIFont systemFontOfSize:20.0f];
     self.titleLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.65f];
@@ -72,7 +79,6 @@
     }];
     
     [self.headImage mas_makeConstraints:^(MASConstraintMaker *make) {
-    
         make.centerY.equalTo(self.bcgdView);
         make.left.equalTo(self.bcgdView).offset(10);
         make.top.equalTo(self.bcgdView).offset(10);
@@ -81,17 +87,24 @@
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.headImage.mas_centerY);
-        make.left.equalTo(self.headImage.mas_right).offset(10);
         make.right.equalTo(self.contentView).offset(-10);
+        make.left.equalTo(self.headImage.mas_right).offset(10);
         make.height.equalTo(@(25));
     }];
     [self.password mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.top.equalTo(self.headImage.mas_centerY);
-        make.left.equalTo(self.headImage.mas_right).offset(10);
-        make.right.equalTo(self.contentView).offset(-10);
         make.height.equalTo(@(20));
+        make.left.equalTo(self.headImage.mas_right).offset(10);
+        make.top.equalTo(self.headImage.mas_centerY);
+        make.right.equalTo(self.contentView).offset(-10);
     }];
+}
+
+- (void)longGesture:(UILongPressGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        
+        NSLog(@"长按手势");
+    }
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
