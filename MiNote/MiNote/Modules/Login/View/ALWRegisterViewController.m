@@ -172,13 +172,14 @@ UITextFieldDelegate
     }];
     [self.viewModel.complete subscribeNext:^(id x) {
         @strongify_return_if_nil(self);
+        self.alw_reloadData();
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [self.viewModel.countdownBegin subscribeNext:^(NSString *countdown) {
         @strongify_return_if_nil(self);
         NSInteger count = [countdown integerValue];
         self.verificationCode.userInteractionEnabled = NO;
-        [self.verificationCode setTitle:[NSString stringWithFormat:@"倒计时%ld",count] forState:UIControlStateNormal];
+        [self.verificationCode setTitle:[NSString stringWithFormat:@"倒计时%ld",(long)count] forState:UIControlStateNormal];
     }];
     [self.viewModel.countdownEnd subscribeNext:^(NSString *countdown) {
         @strongify_return_if_nil(self);
@@ -189,6 +190,8 @@ UITextFieldDelegate
     [self.viewModel.httpError subscribeNext:^(id x) {
         NSLog(@"%@",x);
         [self.view alw_showHUDWithWarningText:(NSString *)x];
+        self.verificationCode.userInteractionEnabled = YES;
+        [self.verificationCode setTitle:@"重新发送验证码" forState:UIControlStateNormal];
     }];
     
 }

@@ -64,34 +64,34 @@
     [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bacView.mas_top).offset(10);
         make.centerX.equalTo(self.bacView.mas_centerX);
-        make.right.equalTo(self.bacView.mas_right).offset(-80);
+        make.right.equalTo(self.bacView.mas_right).offset(-20);
         make.height.equalTo(@(44));
     }];
     
     [self.userTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.bacView.mas_centerX);
         make.top.equalTo(self.titleTextField.mas_bottom).offset(10);
-        make.right.equalTo(self.bacView.mas_right).offset(-80);
+        make.right.equalTo(self.bacView.mas_right).offset(-20);
         make.height.equalTo(@(44));
     }];
     
     [self.paswTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.bacView.mas_centerX);
         make.top.equalTo(self.userTextField.mas_bottom).offset(10);
-        make.right.equalTo(self.bacView.mas_right).offset(-80);
+        make.right.equalTo(self.bacView.mas_right).offset(-20);
         make.height.equalTo(@(44));
     }];
     
     [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.bacView.mas_centerX);
         make.bottom.equalTo(self.bacView.mas_bottom).offset(-20);
-        make.size.mas_equalTo(CGSizeMake(kMAIN_WEDITH/3, 40));
+        make.size.mas_equalTo(CGSizeMake((kMAIN_WEDITH-88)/2, 40));
     }];
     
     [self.bacView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_centerY);
         make.centerX.equalTo(self.view);
-        make.left.equalTo(self.view).offset(50);
+        make.left.equalTo(self.view).offset(20);
         make.height.equalTo(@(54*5));
     }];
 }

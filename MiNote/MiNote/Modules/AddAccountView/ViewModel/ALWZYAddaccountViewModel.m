@@ -24,7 +24,7 @@
     if ([ALWGenericFunction isNill:self.title] == NO ||
         [ALWGenericFunction isNill:self.userName] == NO ||
         [ALWGenericFunction isNill:self.passWord] == NO) {
-        failed(@"有空值");
+        failed(@"不能为空");
         
     }else{
         
