@@ -8,10 +8,10 @@
 
 #import "ALWBaseViewController.h"
 
-
+typedef void(^registerView)();
 
 @interface ALWRegisterViewController : ALWBaseViewController <ALWZYReactiveView>
-
+@property (nonatomic, copy) registerView alw_reloadData;
 
 
 

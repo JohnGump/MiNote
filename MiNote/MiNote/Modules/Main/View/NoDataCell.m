@@ -35,11 +35,12 @@
 {
     self.promptlabel = [[UILabel alloc] init];
     self.promptlabel.textAlignment = NSTextAlignmentCenter;
+    self.promptlabel.numberOfLines = 0;
     [self.contentView addSubview:self.promptlabel];
     [self.promptlabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.centerX.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(kMAIN_HEIGHT, 50));
+        make.size.mas_equalTo(CGSizeMake(kMAIN_HEIGHT-40, 50));
     }];
 }
 

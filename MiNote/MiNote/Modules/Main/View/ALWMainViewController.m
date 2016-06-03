@@ -69,11 +69,16 @@ ALWPopOverViewDelegate
 
 - (void)_alw_addAccount:(UIButton *)sender
 {
-    NSArray *array = @[@"添加账号",@"设置账号"];
-    ALWPopOverView *popOverView = [[ALWPopOverView alloc] initWithBounds:CGRectMake(0, 0, kMAIN_WEDITH/4,array.count*44) titleMenus:array];
-    popOverView.containerBackgroudColor = [UIColor blackColor];
-    popOverView.delegate = self;
-    [popOverView showFrom:sender alignStyle:ALWAlingStyle_Right];
+//    NSArray *array = @[@"添加账号",@"设置账号"];
+//    ALWPopOverView *popOverView = [[ALWPopOverView alloc] initWithBounds:CGRectMake(0, 0,100,array.count*44) titleMenus:array];
+//    popOverView.containerBackgroudColor = [UIColor blackColor];
+//    popOverView.delegate = self;
+//    [popOverView showFrom:sender alignStyle:ALWAlingStyle_Right];
+    ALWZYAddAccountController *viewController = [[ALWZYAddAccountController alloc] initWithViewModel:[[ALWZYAddaccountViewModel alloc] init]];
+    viewController.addComplete = ^{
+        [self.viewModel getDataList];
+    };
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark -ALWPopOverVeiwDelegate
@@ -120,6 +125,9 @@ ALWPopOverViewDelegate
     {
         UINavigationController *navigation = ({
             ALWRegisterViewController *viewController = [[ALWRegisterViewController alloc] initWithViewModel:[[ALWRegisterViewModel alloc] init]];
+            viewController.alw_reloadData = ^(){
+                [self.viewModel getDataList];
+            };
             [[ALWBaseNavigationController alloc] initWithRootViewController:viewController];
         });
         [self presentViewController:navigation animated:YES completion:nil];
