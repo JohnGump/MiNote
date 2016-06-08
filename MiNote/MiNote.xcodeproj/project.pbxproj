@@ -593,6 +593,7 @@
 				TargetAttributes = {
 					2E0083101C6479CA00BAA074 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = S2V9M6R7D7;
 					};
 					2E0083291C6479CA00BAA074 = {
 						CreatedOnToolsVersion = 7.2;
@@ -875,6 +876,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
+
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
